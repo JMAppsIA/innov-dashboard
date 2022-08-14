@@ -1,0 +1,37 @@
+@use '../scss/abstracts/' as *;
+
+.main {
+    padding-left: $sideBarWidth;
+    overflow: hidden;
+
+    @include tablet {
+        padding-left: 0;
+        width: 100vw;
+    }
+
+    &__content {
+        min-height: 100vh;
+        transition: all 0.5s ease-in-out;
+        padding-top: calc($navBarHeight + 24px);
+        padding-left: 64px;
+        padding-right: 64px;
+        padding-bottom: calc($navBarHeight + 24px);
+
+        @include tablet {
+            padding-top: calc($navBarHeight + 24px);
+
+            position: relative;
+            background-color: $bodyBg;
+            z-index: 100;
+        }
+    }
+}
+
+.sidebar-open .main {
+    height: 100vh;
+    overflow: hidden;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transform: scale(0.8) translateX(50%);
+    transition: all 0.5s ease-in-out;
+}

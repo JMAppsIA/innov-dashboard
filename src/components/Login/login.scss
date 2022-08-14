@@ -1,0 +1,160 @@
+@use "../../scss/abstracts/" as *;
+
+.login {
+  &-container {
+    @include flex(stretch, stretch);
+  }
+
+  &-header {
+    top: 0px;
+    z-index: 9;
+    line-height: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 40px 0px 40px;
+
+    &-image-container {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+
+      @include tablet {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    &-option-link {
+      margin: 0px;
+      font-weight: $fontWeightMedium;
+      line-height: $lineHeightNormal;
+      font-size: $fontSizeXSmall;
+      font-family: $fontFamily;
+      color: $mainColor;
+      text-decoration: none;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      top: 0px;
+      z-index: 9;
+      line-height: 0;
+      width: 100%;
+      @include flex();
+      position: absolute;
+      padding: 24px;
+      justify-content: space-between;
+    }
+
+    & > span {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &-card {
+    &-text-container {
+      margin: 80px 0px 40px;
+      font-weight: 700;
+      line-height: 1.5;
+      font-size: 1.5rem;
+      font-family: $fontFamily;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    &-container {
+      @include flex(center, center);
+      flex-direction: column;
+      background-color: $bodyBg;
+      color: $txtColor;
+      transition: $loginTransition;
+      background-image: none;
+      overflow: hidden;
+      position: relative;
+      box-shadow: $loginBoxShadow;
+      border-radius: $mainCardBorderRadius;
+      z-index: 0;
+      width: 100%;
+      max-width: 464px;
+      margin: 16px 0px 16px 16px;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &-container {
+        line-height: 1;
+        display: block;
+        overflow: hidden;
+      }
+
+      &-wrapper {
+        color: transparent;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-size: cover !important;
+      }
+    }
+
+    
+  }
+
+  &-form {
+    &-container {
+      max-width: 600px;
+      padding-left: 24px;
+      padding-right: 24px;
+      width: 100%;
+      margin-left: auto;
+      box-sizing: border-box;
+      margin-right: auto;
+      display: block;
+    }
+
+    &-wrapper {
+      max-width: 480px;
+      margin: auto;
+      min-height: 100vh;
+      @include flex(stretch, center);
+      flex-direction: column;
+      padding: 96px 0px;
+
+      @include tablet {
+        min-height: 90vh;
+      }
+    }
+
+    &-header {
+      @include flex();
+      align-items: center;
+      margin-bottom: 40px;
+      &-title-container {
+        flex-grow: 1;
+        @include flex(stretch);
+        flex-direction: column;
+      }
+    }
+  }
+}

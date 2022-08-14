@@ -1,0 +1,41 @@
+@use "../../scss/abstracts" as *;
+
+.user__info {
+  @include flex(center);
+
+  & > :not(style) + :not(style) {
+    margin: 0px 0px 0px 12px;
+  }
+
+  &__language {
+    @include inlineFlex();
+
+    &__icon {
+      max-width: none;
+    }
+  }
+
+  &__notifications {
+    @include inlineFlex();
+  }
+
+  &__friends {
+    @include inlineFlex();
+  }
+
+  &__container {
+    font-family: $fontFamily;
+    font-size: $fontSizeMedium;
+    line-height: $lineHeightSmall;
+    @include flex(center, center);
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    user-select: none;
+    cursor: pointer;
+  }
+}

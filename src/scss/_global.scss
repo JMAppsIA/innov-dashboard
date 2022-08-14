@@ -1,0 +1,157 @@
+@use "./abstracts/" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inspiration&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+  &::before {
+    box-sizing: inherit;
+  }
+
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+:root {
+  --fc-daygrid-event-dot-width: 8px;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  &::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbarBg;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background: $scrollbarBgInactive;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  color: $txtColor;
+  line-height: $lineHeightNormal;
+  font-size: $fontSizeNormal;
+  font-family: $fontFamily;
+  font-weight: $fontWeightNormal;
+  background-color: $bodyBg;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.mb {
+  margin-bottom: $spacing;
+
+  @include tablet {
+    margin-bottom: $mobileSpacing;
+  }
+}
+
+.title {
+  font-size: $fontSizeMedium;
+  font-weight: 700;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+
+  @include tablet {
+    width: 0;
+  }
+}
+
+.sidebar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: $scrollbarBg;
+  border-radius: 10px;
+}
+.sidebar::-webkit-scrollbar-thumb:window-inactive {
+  background: $scrollbarBgInactive;
+}
+
+// .form-select {
+//   display: block;
+//   width: 100%;
+//   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+//   -moz-padding-start: calc(0.75rem - 3px);
+//   font-size: 1rem;
+//   font-weight: 400;
+//   line-height: 1.5;
+//   color: $black;
+//   background: $gray0;
+//   border-radius: 8px;
+//   background-image: url("../assets/images/arrow-down.svg");
+//   background-repeat: no-repeat;
+//   background-position: right 0.75rem center;
+//   background-size: 16px 12px;
+//   border: 1px solid $gray0;
+//   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+//   appearance: none;
+//   cursor: pointer;
+// }
+
+// .form-select select {
+//   display: none;
+// }
+
+.table-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.table-edit-icon {
+  font-size: 24px;
+  color: $mainColor;
+}
+
+.table-delete-icon {
+  font-size: 24px;
+  color: $red;
+}
+
+.light {
+}
+
+.dark {
+}
