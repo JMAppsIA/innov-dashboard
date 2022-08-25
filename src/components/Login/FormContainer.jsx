@@ -1,7 +1,8 @@
 import React from "react";
+import FormProvider from "../../hook-form/FormProvider";
 import Text from "../Text/Text";
 
-const FormContainer = ({ children, title, subTitle, image }) => {
+const FormContainer = ({ children, title, subTitle, image,  methods, onSubmit }) => {
   return (
     <div className="login-form-container">
       <div className="login-form-wrapper">
@@ -14,9 +15,9 @@ const FormContainer = ({ children, title, subTitle, image }) => {
             <img src={image} alt="form-img" width={70} height={70}/>
           </Text>
         </div>
-        <form>
-          {children}
-        </form>
+        <FormProvider methods={methods} {...{onSubmit}}>
+            {children}
+        </FormProvider>
       </div>
     </div>
   );

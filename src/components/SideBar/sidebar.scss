@@ -13,7 +13,8 @@
   border-right: 1px dashed rgba(145, 158, 171, 0.24);
   width: $sideBarWidth;
   margin: 0px;
-  overflow: auto;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
   top: 0;
   left: 0;
   transition: 0.3s ease-in-out;
@@ -93,6 +94,7 @@
       margin: 0px;
       padding: 0px 16px;
       position: relative;
+      transition: height 3s ease-in-out;
 
       &__header {
         box-sizing: border-box;
@@ -166,19 +168,15 @@
             background-color: rgba(145, 158, 171, 0.08);
           }
         }
-
-
       }
     }
 
     &__sublist {
       min-height: 0px;
-      transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
       display: flex;
       align-items: stretch;
       flex-direction: column;
       overflow: hidden;
-      height: 0;
 
       &__option {
         -webkit-tap-highlight-color: transparent;
@@ -241,31 +239,35 @@
 
       &.open {
         transition: 0.3s ease-in-out;
-        height: auto;
       }
-
-      
     }
   }
 
   &__footer {
     flex-direction: column;
-    align-self: center;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 40px;
-    margin: 16px 0px;
-    width: calc(100% - 20px);
+    margin-top: 80px;
+    width: 100%;
     text-align: center;
     display: block;
-    background-color: $bodyBg;
-    color: $txtColor;
-    transition: $loginTransition;
-    box-shadow: $loginBoxShadow;
-    border-radius: $mainCardBorderRadius;
-    max-width: 464px;
+
+    &>img {
+      margin:  0px 0px 24px;
+    }
+
 
     &__container {
+      @include flex(center, center);
+      flex-direction: column;
+
+      &> :not(style) + :not(style) {
+        margin: 24px 0px 0px;
+      }
+    }
+
+    &__description {
       @include flex(center, center);
       flex-direction: column;
     }
@@ -278,9 +280,6 @@
   @include tablet {
     width: 100vw;
   }
-}
 
-.sidebar__body__list__option .toggle__btn ~ .sidebar__body__sublist.open {
-  transition: transform 0.3s;
-  transform: rotate(90deg);
+  
 }

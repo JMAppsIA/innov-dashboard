@@ -1,11 +1,24 @@
 @use '../scss/abstracts/' as *;
 
+.container {
+   height: 100vh;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   background-color: $bodyBg;
+   text-align: center; 
+}
+
 .main {
     padding-left: $sideBarWidth;
     overflow: hidden;
+    width: 100%;
+    padding-top: 96px;
 
     @include tablet {
         padding-left: 0;
+        padding-top: 0;
         width: 100vw;
     }
 
@@ -16,13 +29,21 @@
         padding-left: 64px;
         padding-right: 64px;
         padding-bottom: calc($navBarHeight + 24px);
+        
 
         @include tablet {
-            padding-top: calc($navBarHeight + 24px);
-
+            padding-top: calc($navBarHeight * 6);
+            padding-left: 0px; 
+            padding-right: 0px;
             position: relative;
             background-color: $bodyBg;
             z-index: 100;
+        }
+    }
+
+    @include tablet {
+        & ~ .sidebar__body__list__option.active, .sidebar__body__sublist__option.active {
+            transform: scale(1) translateX(0);
         }
     }
 }

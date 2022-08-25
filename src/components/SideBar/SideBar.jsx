@@ -6,14 +6,13 @@ import Button from "../Button/Button";
 import { FaAngleDoubleLeft } from "react-icons/fa";
 import { data } from "../../constants";
 import Text from "../Text/Text";
-import { MdOutlineContactSupport } from "react-icons/md";
 import SideBarItem from "./SideBarItem";
+import footerBg from "../../assets/images/sidebar-footer.png";
 
-const SideBar = ({ isOpen, toggle }) => {
+const SideBar = ({ isOpen, toggle, ref }) => {
   const navigate = useNavigate();
   const closeSidebar = () => {
-    document.querySelector(".main").style.transform =
-      "scale(1) translateX(0)";
+    // document.querySelector(".main").style.transform = "scale(1) translateX(0)";
     setTimeout(() => {
       document.body.classList.remove("sidebar-open");
       document
@@ -23,17 +22,14 @@ const SideBar = ({ isOpen, toggle }) => {
     }, 500);
   };
   return (
-    <div
-      className="sidebar"
-    >
-      <div
-        className="sidebar__container"
-      >
+    <div className="sidebar">
+      <div className="sidebar__container">
         <div className="sidebar__header">
           <div className="sidebar__header__logo__container">
             <div
               className="sidebar__header__logo"
               onClick={() => {
+                ref.current.complete();
                 navigate("/dashboard/app");
                 toggle();
               }}
@@ -68,7 +64,7 @@ const SideBar = ({ isOpen, toggle }) => {
           </Link>
         </div>
         <div className="sidebar__body">
-          {data.dashboard.modules.map((module, index) => (
+          {data.modulesv2.map((module, index) => (
             <SideBarItem
               key={`item-${index}`}
               module={module}
@@ -77,11 +73,13 @@ const SideBar = ({ isOpen, toggle }) => {
           ))}
         </div>
         <div className="sidebar__footer">
-          <MdOutlineContactSupport size={80} />
+          <img src={footerBg} alt="" />
           <div className="sidebar__footer__container">
-            <Text small title>{`Hola, ${data.user.name}`}</Text>
-            <Text xSmall body1>{`Necesitas ayuda?`}</Text>
-            <Text xSmall body1>{`Por favor, contactanos.`}</Text>
+            <div className="sidebar__footer__description">
+              <Text small title>{`Hola, ${data.user.name}`}</Text>
+              <Text xSmall body1>{`Necesitas ayuda?`}</Text>
+              <Text xSmall body1>{`Por favor, contactanos.`}</Text>
+            </div>
             <Button primary xSmall>{`Contactar`}</Button>
           </div>
         </div>

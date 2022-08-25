@@ -1,0 +1,47 @@
+{
+    "authentication": {
+        "login": {
+            "title": "Hi!, Welcome back.",
+            "form": {
+                "title": "Join Innov Dashboard",
+                "subTitle": "Put your credentials below",
+                "email": "Email Address",
+                "emailRequired": "Email is required",
+                "password": "Your password",
+                "parrwordRequired": "Password is required"
+            },
+            "header": {
+                "title": "Don't have an accocunt?",
+                "link": "Join us!"
+            },
+            "disclaimer": "",
+            "button": "Log me in"
+        },
+        "register": {
+            "title": "Manage your business more effectively with Innov!",
+            "form": {
+                "title": "Start with us",
+                "subTitle": "1st month free",
+                "firstName": "What's your first name?",
+                "lastName": "And last name?",
+                "email": "Email Address",
+                "password": "Your password",
+                "terms": "By registering, I accept the terms and conditions of Innov."
+            },
+            "header": {
+                "title": "Already registered?",
+                "link": "Log in!"
+            },
+            "disclaimer": "Manage your business more effectively with Innov!",
+            "button": "Sign me up"
+        }
+    },
+    "home": {
+        "mainCard": {
+            "title": "Welcome back! Innov Dashboard",
+            "subTitle": "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.",
+            "buttonTitle": "Go Now"
+        }
+    },
+    "inputRequired": "This is a required field"
+}

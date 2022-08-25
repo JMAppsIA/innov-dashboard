@@ -5,45 +5,51 @@ import { BsCheck } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 
 const SideBarItem = ({ module, toggle }) => {
-  const [open, setOpen] = useState(false);
-  const { title, options } = module;
+  const [subnav, setSubnav] = useState(false);
 
-  if (module.options) {
-  }
+  const showSubnav = () => setSubnav(!subnav);
 
   return (
     <>
       <ul className="sidebar__body__list">
-        <li className="sidebar__body__list__header">{title}</li>
-        {options.map((option, index) => (
-          <div>
-            <NavLink
-              className={`sidebar__body__list__option`}
-              activeClassName={`active`}
-              to={option.link || `#`}
-              onClick={() => option.hasSubOptions ? setOpen(!open) : toggle}
+        {/* <li className="sidebar__body__list__header">{module.title}</li> */}
+        <div>
+          <NavLink
+            className={`sidebar__body__list__option`}
+            activeClassName={`active`}
+            to={module.path || `#`}
+            onClick={module.subNav && showSubnav}
+          >
+            {module.icon}
+            <div className="sidebar__body__list__option__title">
+              <Text xSmall>{module.title}</Text>
+            </div>
+            {module.subNav && (
+              <BiChevronRight
+                size={24}
+                className="toggle__btn"
+                style={{
+                  transition: `transform .3s`,
+                  transform: subnav ? `rotate(90deg)` : `rotate(0deg)`,
+                }}
+              />
+            )}
+          </NavLink>
+          {subnav && (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                minHeight: 0,
+                height: `auto`,
+                transition: `height 0.3s ease-in-out`,
+              }}
             >
-              {option.icon}
-              <div className="sidebar__body__list__option__title">
-                <Text xSmall>{option.title}</Text>
-              </div>
-              {option.hasSubOptions && (
-                <BiChevronRight
-                  size={24}
-                  className="toggle__btn"
-                  style={{
-                    transition: `transform .3s`,
-                    transform: open ? `rotate(90deg)` : `rotate(0deg)`,
-                  }}
-                />
-              )}
-            </NavLink>
-            {option.subOptions.length > 0 &&
-              option.subOptions.map((subOption, index) => (
-                <div className={`sidebar__body__sublist ${open && `open`}`}>
+              {module.subNav.map((subOption, index) => (
+                <div className={`sidebar__body__sublist`} key={index}>
                   <NavLink
                     className="sidebar__body__sublist__option"
-                    to={subOption?.link || `#`}
+                    to={subOption?.path}
                     activeClassName={`active`}
                     onClick={toggle}
                   >
@@ -56,8 +62,9 @@ const SideBarItem = ({ module, toggle }) => {
                   </NavLink>
                 </div>
               ))}
-          </div>
-        ))}
+            </div>
+          )}
+        </div>
       </ul>
     </>
   );

@@ -28,6 +28,7 @@ const Button = ({
   textColor,
   hasReflection,
   onClick,
+  type
 }) => {
   const className = {
     xs: xs && "xs",
@@ -59,6 +60,7 @@ const Button = ({
         width: width,
         height: height,
       }}
+      {...{type}}
     >
       {icon && 
         <span className="icon-container">

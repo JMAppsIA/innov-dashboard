@@ -1,0 +1,45 @@
+@use "../../scss/abstracts/" as *;
+
+.card {
+  &__main {
+    @include flex(center, space-between);
+    height: 100%;
+    text-align: left;
+    color: rgb(33, 43, 54);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-image: none;
+    overflow: hidden;
+    position: relative;
+    border-radius: 16px;
+    z-index: 0;
+    box-shadow: none;
+    text-align: center;
+    background-color: rgb(200, 250, 205);
+    padding: 0px 0px 0px 40px;
+
+    &__text {
+      &__container {
+        @include flex(stretch, flex-start);
+        flex-direction: column;
+        padding: 0px 24px 0px 0px;
+        color: rgb(33, 43, 54);
+        max-width: 420px;
+      }
+    }
+
+    &__image {
+        &__container {
+            margin: inherit;
+            padding: 24px;
+            width: 360px;
+        }
+    }
+
+    @include tablet {
+      max-width: 100%;
+      width: 100%;
+      padding: 40px;
+      flex-direction: column;
+    }
+  }
+}

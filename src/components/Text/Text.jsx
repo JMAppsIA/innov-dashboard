@@ -33,14 +33,15 @@ const Text = ({
   align,
   title,
   body1,
-  body2
+  body2,
+  style
 }) => {
   const className = {
-    xSmall: xSmall && 'xs',
-    small: small && 'sm',
-    medium: medium && 'md',
-    large: large && 'lg',
-    xLarge: xLarge && 'xl',
+    xSmall: xSmall && 'xSmall',
+    small: small && 'small',
+    medium: medium && 'medium',
+    large: large && 'large',
+    xLarge: xLarge && 'xLarge',
     black: black && "black",
     blackItalic: blackItalic && "blackItalic",
     bold: bold && "bold",
@@ -71,6 +72,7 @@ const Text = ({
       style={{
         color: color || `none`,
         textAlign: align || `left`,
+        ...style
       }}
     >
       {children}

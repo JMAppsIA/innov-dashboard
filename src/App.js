@@ -2,13 +2,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./scss/App.scss";
 import { Blank, Login, Register } from "./pages";
 import MainLayout from "./layout/MainLayout";
+import Home from "./pages/Home";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { t } = useTranslation("global");
+
   return (
     <BrowserRouter>
       <Routes>
         <Route exact path="/dashboard" element={<MainLayout />}>
-          <Route exact path="app" element={<Blank id={`app`} />} />
+          <Route exact path="app" element={<Home id={`app`} translation={t}/>} />
           <Route exact path="ecommerce" element={<Blank id={`ecommerce`} />} />
           <Route exact path="analytics" element={<Blank id={`analytics`} />} />
           <Route exact path="banking" element={<Blank id={`banking`} />} />

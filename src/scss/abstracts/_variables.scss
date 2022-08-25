@@ -1,5 +1,6 @@
 $bodyBg: rgb(255, 255, 255);
 $bodyBgRgba: rgba(255, 255, 255, 0.8);
+$formControlDisabled: #959495;
 
 $bgBlur: blur(6px);
 
@@ -24,7 +25,7 @@ $mainActiveBoxShadow: rgb(145 158 171 / 20%) 0px 5px 5px -3px,
 $mobile-width: 600px;
 $tablet-width: 1366px;
 
-$scrollbarBg: rgb(1 2 3 / 40%);
+$scrollbarBg: rgb(1 2 3 / 30%);
 $scrollbarBgInactive: rgb(1 2 3 / 20%);
 
 // spacings
@@ -46,7 +47,7 @@ $black: #000;
 $white: #fff;
 $gray0: #e0e0e0;
 $green: #4caf50;
-$red: #db190c;
+$red: #FF4842;
 $whatsAppBg: #25d366;
 
 $subTitleColor: rgb(99, 115, 129);
@@ -58,6 +59,8 @@ $fontSizeXSmall: 0.875rem;
 $fontSizeNormal: 1rem;
 $fontSizeMedium: 1.25rem;
 $fontSizeLarge: 1.5625rem;
+$fontSizeXLarge: 2rem;
+
 
 $fontWeightNormal: 400;
 $fontWeightMedium: 600;

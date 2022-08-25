@@ -1,0 +1,9 @@
+@use "../../scss/abstracts/" as *;
+
+.checkbox {
+
+    &__container {
+        @include flex(stretch, flex-start);
+        cursor: pointer;
+    }
+}

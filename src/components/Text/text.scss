@@ -4,24 +4,24 @@
   text-transform: uppercase;
 }
 
-.xs {
+.xSmall {
   font-size: $fontSizeXSmall !important;
 }
 
-.sm {
+.small {
   font-size: $fontSizeNormal !important;
 }
 
-.md {
+.medium {
   font-size: $fontSizeMedium !important;
 }
 
-.lg {
+.large {
   font-size: $fontSizeLarge !important;
 }
 
-.xl {
-  font-size: $fontSizeXSmall !important;
+.xLarge {
+  font-size: $fontSizeXLarge !important;
 }
 
 .black {
