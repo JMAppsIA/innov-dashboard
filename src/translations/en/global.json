@@ -41,6 +41,9 @@
             "title": "Welcome back! Innov Dashboard",
             "subTitle": "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.",
             "buttonTitle": "Go Now"
+        },
+        "salesCard": {
+            "title": "Your current sales"
         }
     },
     "inputRequired": "This is a required field"

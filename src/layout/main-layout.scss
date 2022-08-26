@@ -1,58 +1,72 @@
-@use '../scss/abstracts/' as *;
+@use "../scss/abstracts/" as *;
 
 .container {
-   height: 100vh;
-   width: 100%;
-   align-items: center;
-   justify-content: center;
-   display: flex;
-   background-color: $bodyBg;
-   text-align: center; 
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: $bodyBg;
+  text-align: center;
 }
 
 .main {
-    padding-left: $sideBarWidth;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 96px;
+  padding-left: $sideBarWidth;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 96px;
+
+  @include tablet {
+    padding-left: 0;
+    padding-top: 0;
+    width: 100vw;
+  }
+
+  &__content {
+    min-height: 100vh;
+    transition: all 0.5s ease-in-out;
+    padding-top: calc($navBarHeight + 24px);
+    // padding-left: 64px;
+    // padding-right: 64px;
+    // padding-bottom: calc($navBarHeight + 24px);
+
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: -24px;
+    width: calc(100% + 24px);
+    margin-left: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
 
     @include tablet {
-        padding-left: 0;
-        padding-top: 0;
-        width: 100vw;
+      padding-top: calc($navBarHeight + 24px);
+      padding-left: 0px;
+      padding-right: 24px;
+      position: relative;
+      background-color: $bodyBg;
+      z-index: 100;
     }
 
-    &__content {
-        min-height: 100vh;
-        transition: all 0.5s ease-in-out;
-        padding-top: calc($navBarHeight + 24px);
-        padding-left: 64px;
-        padding-right: 64px;
-        padding-bottom: calc($navBarHeight + 24px);
-        
-
-        @include tablet {
-            padding-top: calc($navBarHeight * 6);
-            padding-left: 0px; 
-            padding-right: 0px;
-            position: relative;
-            background-color: $bodyBg;
-            z-index: 100;
-        }
+    & > div {
+      padding-left: 24px;
+      padding-top: 24px;
     }
+  }
 
-    @include tablet {
-        & ~ .sidebar__body__list__option.active, .sidebar__body__sublist__option.active {
-            transform: scale(1) translateX(0);
-        }
+  @include tablet {
+    & ~ .sidebar__body__list__option.active,
+    .sidebar__body__sublist__option.active {
+      transform: scale(1) translateX(0);
     }
+  }
 }
 
 .sidebar-open .main {
-    height: 100vh;
-    overflow: hidden;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    transform: scale(0.8) translateX(50%);
-    transition: all 0.5s ease-in-out;
+  height: 100vh;
+  overflow: hidden;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  transform: scale(0.8) translateX(50%);
+  transition: all 0.5s ease-in-out;
 }

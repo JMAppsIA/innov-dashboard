@@ -81,7 +81,7 @@ input[type="checkbox"] {
   /* For iOS < 15 */
   background-color: $bodyBg;
   /* Not removed via appearance */
-  margin: 0;
+  margin: 0 5px 0;
 
   cursor: pointer;
 
@@ -136,11 +136,11 @@ input[type="checkbox"] {
 }
 
 .mt {
-  margin-top: $spacing !important;
+  // margin-top: 20px !important;
 
-  @include tablet {
-    margin-top: $mobileSpacing;
-  }
+  // @include tablet {
+  //   margin-top: $mobileSpacing;
+  // }
 }
 
 .mb {

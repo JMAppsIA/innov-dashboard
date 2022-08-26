@@ -39,9 +39,12 @@
     },
     "home": {
         "mainCard": {
-            "title": "Welcome back! Innov Dashboard",
-            "subTitle": "If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.",
-            "buttonTitle": "Go Now"
+            "title": "Bienvenido de nuevo! Innov Dashboard",
+            "subTitle": "Si vas a usar un pasaje de Lorem Ipsum, necesitas asegurartee que no haya algo.",
+            "buttonTitle": "Vamos! "
+        },
+        "salesCard": {
+            "title": "Tus ventas recientes"
         }
     },
     "inputRequired": "Este campo es requerido"

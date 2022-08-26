@@ -1,6 +1,6 @@
 import React from "react";
 import "./home.scss";
-import MainCard, { CardSlider } from "../Card/Card";
+import MainCard, { CardSlider, SalesCard } from "../Card/Card";
 import mainCardImage from "../../assets/images/main-card-image.svg";
 import Widget from "../Widget/Widget";
 
@@ -13,7 +13,7 @@ const HomeComponent = ({ translation }) => {
             translation={translation}
             title={translation("home.mainCard.title")}
             description={translation("home.mainCard.subTitle")}
-            buttonTitle={translation("home.mainCard.buttonTitle")}
+            buttonTitle={`${translation("home.mainCard.buttonTitle")} 🚀`} 
             image={mainCardImage}
           />
         </div>
@@ -31,6 +31,16 @@ const HomeComponent = ({ translation }) => {
         <div className="col-4 col-md-12">
           <Widget title={`Total Active Users`} description={`+2.6%`} footer={`13,451`}/>
         </div>
+      </div>
+      <div className="row mt">
+        <div className="col-4 col-md-12">
+          <SalesCard 
+            translation={translation}
+            title={translation("home.salesCard.title")}
+            description={translation("home.salesCard.subTitle")}
+          />
+        </div>
+        <div className="col-8 col-md-12"></div>
       </div>
     </div>
   );

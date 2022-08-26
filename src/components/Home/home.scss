@@ -1,11 +1,27 @@
 @use "../../scss/abstracts/" as *;
 
 .home {
-    padding-left: 24px;
-    padding-right: 24px;
     width: 100%;
     margin-left: auto;
     box-sizing: border-box;
     margin-right: auto;
     display: block;
+
+    &>.row {
+        padding-left: 24px;
+        padding-top: 24px; 
+    }
+
+    @include tablet {
+
+        padding-top: 1100px !important;
+
+        &>.row {
+            padding-top: 24px; 
+
+            [class*="col-"] {
+                padding-top: 24px;
+            }
+        }
+    }
 }
